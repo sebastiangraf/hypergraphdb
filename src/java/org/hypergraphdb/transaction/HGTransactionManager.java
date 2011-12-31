@@ -10,9 +10,11 @@ package org.hypergraphdb.transaction;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
+
 import org.hypergraphdb.HGException;
 import org.hypergraphdb.HyperGraph;
-import com.sleepycat.db.DeadlockException;
+
+import com.sleepycat.je.DeadlockException;
 
 /**
  * 

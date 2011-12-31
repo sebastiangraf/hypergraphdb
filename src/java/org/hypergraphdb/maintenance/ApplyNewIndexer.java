@@ -8,21 +8,20 @@
 package org.hypergraphdb.maintenance;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import org.hypergraphdb.HGHandle;
 import org.hypergraphdb.HGIndex;
 import org.hypergraphdb.HGPersistentHandle;
+import org.hypergraphdb.HGQuery.hg;
 import org.hypergraphdb.HGRandomAccessResult;
 import org.hypergraphdb.HGRandomAccessResult.GotoResult;
 import org.hypergraphdb.HyperGraph;
-import org.hypergraphdb.HGQuery.hg;
 import org.hypergraphdb.indexing.HGIndexer;
 import org.hypergraphdb.transaction.TransactionConflictException;
 import org.hypergraphdb.util.HGUtils;
 
-import com.sleepycat.db.DeadlockException;
+import com.sleepycat.je.DeadlockException;
 
 /**
  * 

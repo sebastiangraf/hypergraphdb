@@ -7,22 +7,18 @@
  */
 package org.hypergraphdb.storage;
 
-public class BAtoBA implements ByteArrayConverter<byte[]>
-{
+public class BAtoBA implements ByteArrayConverter<byte[]> {
     private static final BAtoBA instance = new BAtoBA();
-    
-    public static ByteArrayConverter<byte[]> getInstance()
-    {
+
+    public static ByteArrayConverter<byte[]> getInstance() {
         return instance;
     }
-    
-    public byte[] toByteArray(byte [] object)
-    {
-        return (byte[])object;
+
+    public byte[] toByteArray(byte[] object) {
+        return (byte[]) object;
     }
 
-    public byte [] fromByteArray(byte[] byteArray)
-    {
+    public byte[] fromByteArray(byte[] byteArray) {
         return byteArray;
     }
 }

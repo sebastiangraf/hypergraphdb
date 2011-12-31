@@ -10,8 +10,8 @@ package org.hypergraphdb.transaction;
 import org.hypergraphdb.HGException;
 import org.hypergraphdb.util.CloseMe;
 
-import com.sleepycat.db.Cursor;
-import com.sleepycat.db.DatabaseException;
+import com.sleepycat.je.Cursor;
+import com.sleepycat.je.DatabaseException;
 
 public final class BDBTxCursor implements CloseMe
 {

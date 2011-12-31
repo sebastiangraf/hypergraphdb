@@ -11,10 +11,10 @@ package org.hypergraphdb.transaction;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.sleepycat.db.Cursor;
-import com.sleepycat.db.DatabaseException;
-import com.sleepycat.db.Environment;
-import com.sleepycat.db.Transaction;
+import com.sleepycat.je.Cursor;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.Environment;
+import com.sleepycat.je.Transaction;
 
 public class TransactionBDBImpl implements HGStorageTransaction
 {

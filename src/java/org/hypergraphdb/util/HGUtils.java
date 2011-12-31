@@ -27,12 +27,12 @@ import org.hypergraphdb.HGLink;
 import org.hypergraphdb.HGPersistentHandle;
 import org.hypergraphdb.HGQuery;
 import org.hypergraphdb.HGRandomAccessResult;
+import org.hypergraphdb.HGRandomAccessResult.GotoResult;
 import org.hypergraphdb.HGSearchResult;
 import org.hypergraphdb.HyperGraph;
-import org.hypergraphdb.HGRandomAccessResult.GotoResult;
 import org.hypergraphdb.transaction.TransactionConflictException;
 
-import com.sleepycat.db.DeadlockException;
+import com.sleepycat.je.DeadlockException;
 
 /**
  * 

@@ -7,28 +7,24 @@
  */
 package org.hypergraphdb.storage;
 
-import com.sleepycat.db.DatabaseEntry;
-import com.sleepycat.db.DatabaseException;
-import com.sleepycat.db.SecondaryDatabase;
-import com.sleepycat.db.SecondaryKeyCreator;
+import com.sleepycat.je.DatabaseEntry;
+import com.sleepycat.je.DatabaseException;
+import com.sleepycat.je.SecondaryDatabase;
+import com.sleepycat.je.SecondaryKeyCreator;
 
-public class PlainSecondaryKeyCreator implements SecondaryKeyCreator
-{
+public class PlainSecondaryKeyCreator implements SecondaryKeyCreator {
     private static final PlainSecondaryKeyCreator instance = new PlainSecondaryKeyCreator();
-    
-    private PlainSecondaryKeyCreator()
-    {        
+
+    private PlainSecondaryKeyCreator() {
     }
-    
-    public static PlainSecondaryKeyCreator getInstance()
-    {
+
+    public static PlainSecondaryKeyCreator getInstance() {
         return instance;
     }
-    
+
     public boolean createSecondaryKey(SecondaryDatabase secondary,
             DatabaseEntry key, DatabaseEntry data, DatabaseEntry result)
-            throws DatabaseException
-    {
+            throws DatabaseException {
         result.setData(data.getData());
         return true;
     }

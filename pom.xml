@@ -1,69 +1,95 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-  <groupId>org.hypergraphdb</groupId>
-  <artifactId>hgdbfull</artifactId>
-  <name>HyperGraphDB Core</name>
-  <version>1.0</version>  
-  <url>http://code.google.com/p/hypergraphdb</url>
-    
-  <dependencies>
-	<dependency>
-	  <groupId>jivesoftware</groupId>
-	  <artifactId>smack</artifactId>
-	  <version>3.1.0</version>
-	</dependency>  
-	<dependency>
-	  <groupId>jivesoftware</groupId>
-	  <artifactId>smackx</artifactId>
-	  <version>3.1.0</version>
-	</dependency>
-	<dependency>
-		<groupId>berkeleydb</groupId>
-		<artifactId>berkeleydb</artifactId>
-		<version>4.7.25</version>
-	</dependency>
-	<dependency>
-		<groupId>net.jxta</groupId>
-		<artifactId>jxta</artifactId>
-		<version>2.5</version>
-	</dependency>
-  </dependencies>
-  
-  <build>
-    <directory>target</directory>
-    <outputDirectory>target/classes</outputDirectory>
-    <finalName>${artifactId}-${version}</finalName>
-    <testOutputDirectory>target/test-classes</testOutputDirectory>
-    <sourceDirectory>src/java</sourceDirectory>
-    <!--
-    <scriptSourceDirectory>src/config</scriptSourceDirectory>
-    -->
-    <testSourceDirectory>../test/java</testSourceDirectory>
-    <resources>
-      <resource>
-        <directory>src/config</directory>
-      </resource>
-    </resources>
-    <plugins>
-    	<plugin>
-    		<groupId>org.apache.maven.plugins</groupId>
-    		<artifactId>maven-compiler-plugin</artifactId>
-    		<version>2.0.2</version>
-	        <configuration>
-	          <source>1.5</source>
-	          <target>1.5</target>
-	        </configuration>    		
-    	</plugin>
-    </plugins>
-  <!--
-    <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-      </testResource>
-    </testResources>
-    -->
-  </build>
+	<groupId>org.hypergraphdb</groupId>
+	<artifactId>hgdbfull</artifactId>
+	<name>HyperGraphDB Core</name>
+	<version>1.0</version>
+	<url>http://code.google.com/p/hypergraphdb</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>jivesoftware</groupId>
+			<artifactId>smack</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>jivesoftware</groupId>
+			<artifactId>smackx</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>jxta</groupId>
+			<artifactId>jxta</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sleepycat</groupId>
+			<artifactId>je</artifactId>
+			<version>5.0.34</version>
+		</dependency>
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>disyInternal</id>
+			<name>Internal Repository for the Distributed System Group</name>
+			<url>http://mavenrepo.disy.inf.uni-konstanz.de/repository/disyInternal</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>disyInternalSnapshot</id>
+			<name>Internal Snapshot Repository for the Distributed System Group</name>
+			<url>http://mavenrepo.disy.inf.uni-konstanz.de/repository/disyInternalSnapshot</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>disyThirdParty</id>
+			<name>Repository for third party jar used by disy</name>
+			<url>http://mavenrepo.disy.inf.uni-konstanz.de/repository/disyThirdParty</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<build>
+		<directory>target</directory>
+		<outputDirectory>target/classes</outputDirectory>
+		<finalName>${artifactId}-${version}</finalName>
+		<testOutputDirectory>target/test-classes</testOutputDirectory>
+		<sourceDirectory>src/java</sourceDirectory>
+		<!-- <scriptSourceDirectory>src/config</scriptSourceDirectory> -->
+		<testSourceDirectory>../test/java</testSourceDirectory>
+		<resources>
+			<resource>
+				<directory>src/config</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<!-- <testResources> <testResource> <directory>src/test/resources</directory> 
+			</testResource> </testResources> -->
+	</build>
 </project>

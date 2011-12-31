@@ -9,14 +9,14 @@ package org.hypergraphdb.storage;
 
 /**
  * <p>
- * A utility interface to define mappings between <code>byte [] </code>
- * and object instances.
+ * A utility interface to define mappings between <code>byte [] </code> and
+ * object instances.
  * </p>
  * 
  * @author Borislav Iordanov
  */
-public interface ByteArrayConverter<T>
-{
-    byte [] toByteArray(T object);
-    T fromByteArray(byte [] byteArray);
+public interface ByteArrayConverter<T> {
+    byte[] toByteArray(T object);
+
+    T fromByteArray(byte[] byteArray);
 }

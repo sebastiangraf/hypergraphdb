@@ -2,52 +2,42 @@ package org.hypergraphdb.storage;
 
 import org.hypergraphdb.HGSearchResult;
 
-final class SearchResultWrapper<T> implements HGSearchResult<T>
-{
-	private HGSearchResult<T> rs = null;
-	
-	public SearchResultWrapper(HGSearchResult<T> rs)
-	{
-		this.rs = rs;
-	}
+final class SearchResultWrapper<T> implements HGSearchResult<T> {
+    private HGSearchResult<T> rs = null;
 
-	public boolean hasNext()
-	{
-		return rs.hasNext();
-	}
+    public SearchResultWrapper(HGSearchResult<T> rs) {
+        this.rs = rs;
+    }
 
-	public T next()
-	{
-		return rs.next();
-	}
+    public boolean hasNext() {
+        return rs.hasNext();
+    }
 
-	public void remove()
-	{
-		rs.remove();
-	}
+    public T next() {
+        return rs.next();
+    }
 
-	public void close()
-	{
-		rs.close();
-	}
+    public void remove() {
+        rs.remove();
+    }
 
-	public T current()
-	{
-		return rs.current();
-	}
+    public void close() {
+        rs.close();
+    }
 
-	public boolean isOrdered()
-	{
-		return rs.isOrdered();
-	}
+    public T current() {
+        return rs.current();
+    }
 
-	public boolean hasPrev()
-	{
-		return rs.hasPrev();
-	}
+    public boolean isOrdered() {
+        return rs.isOrdered();
+    }
 
-	public T prev()
-	{
-		return rs.prev();
-	}	
+    public boolean hasPrev() {
+        return rs.hasPrev();
+    }
+
+    public T prev() {
+        return rs.prev();
+    }
 }
