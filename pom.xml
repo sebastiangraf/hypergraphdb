@@ -66,12 +66,8 @@
 		</repository>
 	</repositories>
 	<build>
-		<directory>target</directory>
-		<outputDirectory>target/classes</outputDirectory>
 		<finalName>${artifactId}-${version}</finalName>
-		<testOutputDirectory>target/test-classes</testOutputDirectory>
 		<sourceDirectory>src/java</sourceDirectory>
-		<!-- <scriptSourceDirectory>src/config</scriptSourceDirectory> -->
 		<testSourceDirectory>../test/java</testSourceDirectory>
 		<resources>
 			<resource>
