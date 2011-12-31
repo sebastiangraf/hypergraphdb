@@ -29,6 +29,13 @@
 			<artifactId>je</artifactId>
 			<version>5.0.34</version>
 		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.1.1</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 	<repositories>
 		<repository>
@@ -66,26 +73,32 @@
 		</repository>
 	</repositories>
 	<build>
-		<finalName>${artifactId}-${version}</finalName>
-		<sourceDirectory>src/java</sourceDirectory>
-		<testSourceDirectory>../test/java</testSourceDirectory>
-		<resources>
-			<resource>
-				<directory>src/config</directory>
-			</resource>
-		</resources>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.0.2</version>
+				<version>2.3.2</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4.3</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
 		</plugins>
-		<!-- <testResources> <testResource> <directory>src/test/resources</directory> 
-			</testResource> </testResources> -->
+
 	</build>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+	</properties>
 </project>
