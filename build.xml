@@ -13,7 +13,7 @@
 	<property name="peer-jar-name" value="hgpeer.jar"/>
 	<property name="full-jar-name" value="hgdbfull.jar"/>
 
-	<property name="core-path" value="src/java"/>
+	<property name="core-path" value="src/main/java"/>
 	<property name="peer-path" value="org/hypergraphdb/peer"/>
 		
 	<!-- classpath for compiling-->
@@ -43,7 +43,7 @@
 			<exclude name="${peer-path}/**"/>
 		</javac>
 		<copy todir="${build}/">
-			<fileset dir="src/config">
+			<fileset dir="src/main/config">
 				<include name="**" />
 			</fileset>
 		</copy>        
