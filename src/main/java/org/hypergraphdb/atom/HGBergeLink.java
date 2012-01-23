@@ -29,15 +29,6 @@ import org.hypergraphdb.HGPlainLink;
 public class HGBergeLink extends HGPlainLink {
 	private int tailIndex = 0;
 
-	public HGBergeLink(HGHandle... targets) {
-		super(targets);
-	}
-
-	public HGBergeLink(int tailIndex, HGHandle... targets) {
-		super(targets);
-		this.tailIndex = tailIndex;
-	}
-
 	public HGBergeLink(HGHandle[] head, HGHandle[] tail) {
 		super.outgoingSet = new HGHandle[head.length + tail.length];
 		System.arraycopy(head, 0, super.outgoingSet, 0, head.length);
