@@ -9,7 +9,7 @@
 	<url>http://code.google.com/p/hypergraphdb</url>
 
 	<dependencies>
-		<dependency>
+			<dependency>
 			<groupId>jivesoftware</groupId>
 			<artifactId>smack</artifactId>
 			<version>3.1.0</version>

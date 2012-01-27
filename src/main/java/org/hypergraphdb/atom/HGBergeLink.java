@@ -38,6 +38,13 @@ public class HGBergeLink extends HGPlainLink {
 		this.tailIndex = tailIndex;
 	}
 
+	/**
+	 * 
+	 * Constructor.
+	 *
+	 * @param head the incoming edges of the link (the target ones)
+	 * @param tail the outcoming edges of the link (the origin ones)
+	 */
 	public HGBergeLink(HGHandle[] head, HGHandle[] tail) {
 		super.outgoingSet = new HGHandle[head.length + tail.length];
 		System.arraycopy(head, 0, super.outgoingSet, 0, head.length);
