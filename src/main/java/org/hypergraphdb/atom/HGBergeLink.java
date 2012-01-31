@@ -42,8 +42,8 @@ public class HGBergeLink extends HGPlainLink {
 	 * 
 	 * Constructor.
 	 *
-	 * @param head the incoming edges of the link to a node (the target ones, the sink)
-	 * @param tail the outcoming edges of the link from a node(the origin ones, the source)
+	 * @param head the incoming edges of the link to a node (the target ones, the sink. the children)
+	 * @param tail the outcoming edges of the link from a node(the origin ones, the source, the parents)
 	 */
 	public HGBergeLink(HGHandle[] head, HGHandle[] tail) {
 		super.outgoingSet = new HGHandle[head.length + tail.length];
