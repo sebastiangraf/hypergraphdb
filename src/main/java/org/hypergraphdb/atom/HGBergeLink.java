@@ -67,6 +67,24 @@ public class HGBergeLink extends HGPlainLink {
         return set;
     }
 
+    public void setTail(HGHandle[] elements) {
+        HGHandle[] head = new HGHandle[tailIndex];
+        System.arraycopy(super.outgoingSet, 0, head, 0, tailIndex);
+        super.outgoingSet = new HGHandle[head.length + elements.length];
+        System.arraycopy(head, 0, super.outgoingSet, 0, head.length);
+        System.arraycopy(elements, 0, super.outgoingSet, head.length, elements.length);
+        tailIndex = head.length;
+    }
+
+    public void setHead(HGHandle[] elements) {
+        HGHandle[] tail = new HGHandle[super.outgoingSet.length - tailIndex];
+        System.arraycopy(super.outgoingSet, tailIndex, tail, 0, super.outgoingSet.length - tailIndex);
+        super.outgoingSet = new HGHandle[tailIndex + elements.length];
+        System.arraycopy(elements, 0, super.outgoingSet, 0, elements.length);
+        System.arraycopy(tail, 0, super.outgoingSet, elements.length, super.outgoingSet.length);
+        tailIndex = elements.length;
+    }
+
     public int getTailIndex() {
         return tailIndex;
     }
@@ -105,5 +123,13 @@ public class HGBergeLink extends HGPlainLink {
         if (tailIndex != other.tailIndex)
             return false;
         return true;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+        return "HGBergeLink [tailIndex=" + tailIndex + ", outgoingSet=" + Arrays.toString(outgoingSet) + "]";
     }
 }
